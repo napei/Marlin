@@ -484,9 +484,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // Ultimaker
-  #define DEFAULT_Kp 28.70
-  #define DEFAULT_Ki 2.92
-  #define DEFAULT_Kd 70.54
+  #define DEFAULT_Kp 28.95
+  #define DEFAULT_Ki 2.74
+  #define DEFAULT_Kd 76.48
 
   // MakerGear
   //#define DEFAULT_Kp 7.0
@@ -535,9 +535,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 118.26
-  #define DEFAULT_bedKi 21.23
-  #define DEFAULT_bedKd 439.16
+  #define DEFAULT_bedKp 111.81
+  #define DEFAULT_bedKi 21.66
+  #define DEFAULT_bedKd 384.69
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
