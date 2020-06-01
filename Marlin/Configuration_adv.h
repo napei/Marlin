@@ -39,6 +39,19 @@
 //=============================Thermal Settings  ============================
 //===========================================================================
 
+/**
+ * Thermocouple sensors are quite sensitive to noise.  Any noise induced in
+ * the sensor wires, such as by stepper motor wires run in parallel to them,
+ * may result in the thermocouple sensor reporting spurious errors.  This
+ * value is the number of errors which can occur in a row before the error
+ * is reported.  This allows us to ignore intermittent error conditions while
+ * still detecting an actual failure, which should result in a continuous
+ * stream of errors from the sensor.
+ *
+ * Set this value to 0 to fail on the first error to occur.
+ */
+#define THERMOCOUPLE_MAX_ERRORS 15
+
 //
 // Custom Thermistor 1000 parameters
 //
@@ -1070,6 +1083,8 @@
   // The standard SD detect circuit reads LOW when media is inserted and HIGH when empty.
   // Enable this option and set to HIGH if your SD cards are incorrectly detected.
   //#define SD_DETECT_STATE HIGH
+
+  //#define SDCARD_READONLY                 // Read-only SD card (to save over 2K of flash)
 
   #define SD_PROCEDURE_DEPTH 1              // Increase if you need more nested M32 calls
 

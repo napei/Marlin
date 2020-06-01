@@ -21,7 +21,39 @@
  */
 #pragma once
 
-#if ENABLED(USE_USB_COMPOSITE)
-  //#warning "SD_CHECK_AND_RETRY isn't needed with USE_USB_COMPOSITE."
-  #undef SD_CHECK_AND_RETRY
+#define SKR_MINI_E3_V2
+
+// Onboard I2C EEPROM
+#if NO_EEPROM_SELECTED
+  #define I2C_EEPROM
+  #define MARLIN_EEPROM_SIZE 0x1000                 // 4KB
+  #undef NO_EEPROM_SELECTED
+#endif
+
+#include "pins_BTT_SKR_MINI_E3.h"
+
+#define BOARD_INFO_NAME "BIGTREE SKR Mini E3 V2.0"
+
+// Release PA13/PA14 (led, usb control) from SWD pins
+#define DISABLE_DEBUG
+
+#define NEOPIXEL_PIN                       PA8   // LED driving pin
+
+#define PS_ON_PIN                          PC13  // Power Supply Control
+
+#define FAN1_PIN                           PC7
+
+#ifndef CONTROLLER_FAN_PIN
+  #define CONTROLLER_FAN_PIN               FAN1_PIN
+#endif
+
+/**
+ * TMC220x stepper drivers
+ * Hardware serial communication ports.
+ */
+#if HAS_TMC_UART
+  #define X_HARDWARE_SERIAL  Serial4
+  #define Y_HARDWARE_SERIAL  Serial4
+  #define Z_HARDWARE_SERIAL  Serial4
+  #define E0_HARDWARE_SERIAL Serial4
 #endif
