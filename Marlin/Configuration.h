@@ -493,9 +493,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.0 }
     #define DEFAULT_Kd_LIST { 114.00, 112.0 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  28.95
+    #define DEFAULT_Ki   2.74
+    #define DEFAULT_Kd  76.48
   #endif
 #endif // PIDTEMP
 
@@ -1395,7 +1395,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (55*60)
-#define HOMING_FEEDRATE_Z  (15*60)
+#define HOMING_FEEDRATE_Z  (10*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
